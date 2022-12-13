@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxOpenCv.h"
 
 class ofApp : public ofBaseApp{
 
@@ -21,4 +22,12 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
+    
+    ofxCvHaarFinder faceFinder, eyeFinder;
+    ofVideoGrabber grab;
+    
+    ofImage img, faceImg;
+    ofVec2f origin;
+    
+    int xVal = 640, yVal = 480;
 };
